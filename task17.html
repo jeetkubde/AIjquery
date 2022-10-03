@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <title>project</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:40px">
+        <table class="table table-striped" border="2px" id="tble">
+            <tr>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> mobile No </th>
+                <th> address</th>
+                <th>action <a class="btnadd" href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a></th>
+            </tr>
+            <tr>
+                <td>ritik</td>
+                <td>ramagade</td>
+                <td>123456789</td>
+                <td>kathora naka</td>
+            </tr>
+            <tr>
+                <td>abhi</td>
+                <td>bro</td>
+                <td>13354344</td>
+                <td>kathora naka</td>
+            </tr>
+            <tr>
+                <td>jeet</td>
+                <td>kubde</td>
+                <td>9860409447</td>
+                <td>kathora naka</td>
+            </tr>
+            <tr>
+                <td>jeet</td>
+                <td>kubde</td>
+                <td>9860409447</td>
+                <td>kathora naka</td>
+            </tr>
+        </table>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Student</h4>
+
+                    </div>
+                    <div class="modal-body">
+
+
+                        <form action="javascript:void(0)" class="form">
+                            <div class="form-group">
+                                <label for="Fname">first name</label>
+                                <input type="fname" class="form-control" id="fname" placeholder="first name"
+                                    name="fname">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">last name:</label>
+                                <input type="last name" class="form-control" id="lastNname" placeholder="last name"
+                                    name="pwd">
+                                <div class="form-group">
+                                    <label for="Fname">mobile number:</label>
+                                    <input type="fname" class="form-control" id="mobile" placeholder="mobile number"
+                                        name="fname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Fname">address:</label>
+                                    <input type="fname" class="form-control" id="Address" placeholder="address"
+                                        name="fname">
+                                </div>
+                                
+                                <!-- <div class="checkbox">
+                                <label><input type="checkbox" name="remember"> Remember me</label><br>
+                            </div> -->
+                                <button type="submit" class="btn btn-default btnsavedata">Submit</button>
+
+                                <button type="button" class="btn btn-default btnupdatedata">update</button>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".btnadd").click(function () {
+                $(".btnsavedata").fadeIn();
+                
+                $(".btnupdatedata").fadeOut();
+                $("#myModal").modal('show')   
+            });
+           
+            $(".btnsavedata").click(function () {
+            let fname=$("#fname").val() 
+            let lname=$("#lastNname").val()
+            let mobile=$("#mobile").val()
+            let add=$("#Address").val()
+            $("#tble").append("<tr><td>"+fname+"</td></tr>")
+            });
+        });
+       
+
+    </script>
+</body>
+
+</html>
